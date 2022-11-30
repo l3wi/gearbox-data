@@ -1089,6 +1089,11 @@ micro-compress@^1.0.0:
   dependencies:
     compression "^1.6.2"
 
+micro-cors@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/micro-cors/-/micro-cors-0.1.1.tgz#af7a480182c114ffd1ada84ad9dffc52bb4f4054"
+  integrity sha512-6WqIahA5sbQR1Gjexp1VuWGFDKbZZleJb/gy1khNGk18a6iN1FdTcr3Q8twaxkV5H94RjxIBjirYbWCehpMBFw==
+
 micro-dev@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/micro-dev/-/micro-dev-3.1.0.tgz#e0344ed9af02d251305c77b8342df1d943dbbbe0"

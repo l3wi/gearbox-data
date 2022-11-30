@@ -1,7 +1,9 @@
 const { send } = require('micro')
 const { router, get } = require('microrouter')
-const { getCAs, fetchCAData } = require('./utils/gearbox')
+const cors = require('micro-cors')()
 const compress = require('micro-compress')
+
+const { getCAs, fetchCAData } = require('./utils/gearbox')
 const checkCache = require('./utils/cache')
 
 const fetchAllCAs = async (req, res) => {
@@ -13,9 +15,6 @@ const fetchCA = async (req, res) => {
   return send(res, 200, ca)
 }
 
-module.exports = compress(
-  router(
-    get('/credit-accounts', fetchAllCAs),
-    get('/credit-account/:hash', fetchCA)
-  )
+module.exports = cors(
+  compress(router(get('/', fetchAllCAs), get('/credit-account/:hash', fetchCA)))
 )
